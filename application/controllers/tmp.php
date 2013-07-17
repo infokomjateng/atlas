@@ -1,0 +1,365 @@
+<?php
+
+class Tmp extends MY_Controller
+{
+    function account()
+    {
+        $x = '1 .  .;AKTIVA
+11.  .;AKTIVA LANCAR
+11.01.;KAS
+11.01.1101;Kas Besar
+11.01.1201;Kas Kecil
+11.01.1301;Kas Setoran Harian
+11.01.9999;JUMLAH KAS
+11.02.;BANK
+11.02.2201;Bank BNP
+11.02.9999;JUMLAH BANK
+11.03.;PIUTANG USAHA
+11.03.3101;Piutang Belum Masuk
+11.03.3201;Piutang Kurang Setor
+11.03.3301;Piutang Belum Setor
+11.03.3401;Piutang Pengemudi Tidak Aktif
+11.03.9999;JUMLAH PIUTANG USAHA
+11.04.;PIUTANG LAIN-LAIN
+11.04.4101;Piutang Pengemudi
+11.04.4201;Piutang Karyawan
+11.04.4401;Piutang WAN
+11.04.9901;Piutang Lain-Lain
+11.04.9999;JUMLAH PIUTANG LAIN-LAIN
+11.05.;PERSEDIAAN
+11.05.5101;Persediaan Spare Part
+11.05.5201;Persediaan Ban
+11.05.5301;Persediaan Olie
+11.05.5401;Persediaan Accu
+11.05.9901;Persediaan Lain-Lain
+11.05.9999;JUMLAH PERSEDIAAN
+11.06.;UANG MUKA
+11.06.6101;Uang Muka Pembelian
+11.06.6201;Uang Muka Pajak
+11.06.9999;JUMLAH UANG MUKA
+11.07.;BIAYA DIBAYAR DIMUKA
+11.07.0101;Biaya Dibayar Dimuka
+11.07.9999;JUMLAH BIAYA DIBAYAR DIMUKA
+11.99.9999;TOTAL AKTIVA LANCAR
+12.  .;AKTIVA LAIN-LAIN
+12.99.9999;JUMLAH AKTIVA LAIN-LAIN
+13.  .;AKTIVA TETAP
+13.01.;AKTIVA TETAP BERUJUD
+13.01.0101;TANAH
+13.01.0201;GEDUNG & BANGUNAN
+13.01.0301;MOBIL TAXI
+13.01.0401;KENDARAAN INVENTARIS KANTOR
+13.01.0501;MEUBEL&PERALATAN KANTOR
+13.01.0601;MESIN&PERALATAN BENGKEL
+13.99.9998;JUMLAH AKTIVA TETAP BERUJUD
+14.01.;AKUMULASI PENY.AKTIVA TETAP
+14.01.0101;AKM.PENY. TANAH
+14.01.0201;AKM.PENY. GEDUNG&BANGUNAN
+14.01.0301;AKM.PENYUSUTAN MOBIL TAXI
+14.01.0401;AKM.PENY.KENDARAAN INV.KANTOR
+14.01.0501;AKM.MEUBEL&PERALATAN KANTOR
+14.01.0601;AKM.PENY.MESIN&PERALATAN BKL
+14.01.9999;JUMLAH AKUM.PENY.AKTIVA TETAP
+19.88.9999;JUMLAH AKTIVA TETAP
+19.99.9999;TOTAL AKTIVA
+2 .  .;PASIVA
+21.  .;HUTANG LANCAR
+21.01.;HUTANG USAHA
+21.01.1101;Hutang Usaha
+21.01.9999;JUMLAH HUTANG USAHA
+21.02.;HUTANG BANK & LEASING
+21.02.2401;Hutang Bank BRI
+21.02.2501;Hutang Leasing Orix
+21.02.2601;Dipo Finance
+21.02.2801;Andalan Finance
+21.02.9999;JUMLAH HUTANG BANK&LEASING
+21.03.;HUTANG LAIN-LAIN
+21.03.3101;Titipan Pengemudi
+21.03.3201;Hutang Jaminan Pengemudi
+21.03.9999;JUMLAH HUTANG LAIN-LAIN
+21.04.;BIAYA YG HARUS DIBAYAR
+21.04.4101;Biaya Yg Masih hrs dibayar
+21.04.4301;Hutang Gaji
+21.04.9999;JUMLAH BIAYA YG HARUS DIBAYAR
+21.05.;PENDAPATAN DITERIMA DIMUKA
+21.05.6101;Pendapatan Diterima Dimuka
+21.05.9999;JUMLAH PEND. DITERIMA DIMUKA
+21.88.8888;
+21.99.9999;TOTAL HUTANG LANCAR
+22.  .;HUTANG JANGKA PANJANG
+22.01.;HUTANG PEMEGANG SAHAM
+22.99.9999;JUMLAH HUTANG JK.PANJANG
+22.99.9999;TOTAL HUTANG JANGKA PANJANG
+28.  .;MODAL
+28.01.;MODAL SAHAM
+28.01.1101;Modal Tutuk Kurniawan
+28.01.1201;Modal David Herman Jaya
+28.99.9999;JUMLAH MODAL
+29.  .;LABA RUGI
+29.01.0101;LABA RUGI DITAHAN
+29.02.0101;LABA RUGI TAHUN BERJALAN
+29.03.0101;LABA RUGI BULAN BERJALAN
+29.99.7777;JUMLAH LABA
+39.99.8888;TOTAL MODAL
+39.99.9999;TOTAL PASIVA
+40.  .;PENDAPATAN
+40.01.;PENDAPATAN OPERASIONAL
+40.01.0101;PENDAPATAN ARMADA JALAN
+40.01.0201;PENDAPATAN OVER TIME
+40.01.9998;-----------------
+40.01.9999;JUMLAH PENDAPATAN OPERASIONAL
+40.02.;POTONGAN PENDAPATAN
+40.02.0101;POTONGAN SETORAN ARMADA JALAN
+40.02.0201;POTONGAN SETORAN KS/BS
+40.02.9998;-----------------
+40.02.9999;JUMLAH POTONGAN
+49.99.9998;-----------------
+49.99.9999;JUMLAH PENDAPATAN BERSIH
+5 .  .;BIAYA
+50.01.;BIAYA OPERASIONAL
+50.01.0101;BIAYA BBM KEPERLUAN BENGKEL
+50.01.0201;BIAYA TOL, PARKIR, MEL
+50.01.0301;BIAYA PERAWATAN TAXI DILUAR
+50.01.0401;BIAYA SPAREPART
+50.01.0501;BIAYA OLI/PELUMAS
+50.01.0601;BIAYA BAN
+50.01.0701;BIAYA ACCU
+50.01.0801;BIAYA PERLENGKAPAN BENGKEL
+50.01.0901;BIAYA PEMELIHARAAN/PERB.KEND
+50.01.1001;BIAYA KENTENG CAT
+50.01.1101;BIAYA PIHAK KE TIGA (perwt tx)
+50.01.1201;BIAYA KECELAKAAN
+50.01.1301;BIAYA PERLENGKAPAN ARMADA
+50.01.1401;BIAYA KEBERSIHAN ARMADA
+50.01.1501;BIAYA PERBAIKAN ARGO, RADIO
+50.01.9901;BIAYA OPERASIONAL LAIN2
+50.01.9998;-----------------
+50.01.9999;JUMLAH BIAYA PEMASARAN
+50.02.;BIAYA ADMINISTRASI & UMUM
+50.02.0101;Bi.Gaji Karyawan
+50.02.0201;Bi.Lembur Karyawan
+50.02.0301;Bi.Makan & Minum
+50.02.0401;Bi.Pengobatan
+50.02.0501;THR
+50.02.0601;Bi.Adm Kredit
+50.02.0701;Bi.Arortisasi STNK
+50.02.0801;PPH 21
+50.02.1001;Insentif Karyawan
+50.02.1101;Bi.Sewa Garasi
+50.02.1201;Bi.Sewa Kendaraan
+50.02.1301;Bi.Alat Tulis
+50.02.1401;Bi.Telekomunikasi & Internet
+50.02.1501;Bi.Perjalanan Dinas
+50.02.1601;Bi.Entertainment
+50.02.1701;Bi.Perawatan Inventaris
+50.02.1801;Bi.Listrin & Air
+50.02.1901;Bi.BBM & Tol
+50.02.2001;Bi.Sumbangan
+50.02.2101;Bi.Pemeliharaan Bangunan
+50.02.2201;Bi.Pajak
+50.02.2301;Bi.Adm.Bank
+50.02.2401;Bi.Recruitment
+50.02.2501;Bi.Rumah Tangga
+50.02.2601;Bi.Prog.Komputer
+50.02.2701;Bi.Penyusutan Mobil Taxi
+50.02.2801;Bi.Peny.Kendaraan Inventaris
+50.02.2901;Bi.Peny.Meubel&Peralatan Ktr
+50.02.3001;Bi.Peny.Mesin&Peralatan Bengkl
+50.02.3101;Bi.STNK
+50.02.3201;Bi.Denda/Tilang
+50.02.3301;Bi.Bonus Taxi
+50.02.3401;Bi.Organda
+50.02.3501;Bi.KPS, TERRA
+50.02.3601;Bi.Radio/Argo
+50.02.3701;Bi.Kecelakaan Taxi
+50.02.3801;Bi.Asuransi Taxi
+50.02.3901;Bi.Ijin Operasi Taxi
+50.02.4001;Bi.BBM Taxi
+50.02.4101;Bi.Promosi
+50.02.4201;Bi.Ats.Operasional
+50.02.4301;Bi.Seragam
+50.02.4401;Bi.Cuci Mobil,Pengharum,Tissue
+50.02.4501;Bi.Provisi & Adm
+50.02.4601;Bi.Notaris
+50.02.4701;Bi.Voucher Taxi
+50.02.4801;Bi.Restitusi
+50.02.4901;Bi.Perbaikan Instalasi
+50.02.5001;THR Driver, Pgyb, Pgkln
+50.02.5101;Bi.Keur
+50.02.9901;Bi.Lain-lain Admistrasi&Umum
+50.02.9998;-----------------
+50.02.9999;JUMLAH BIAYA ADM&UMUM
+50.99.9998;-----------------
+50.99.9999;TOTAL BIAYA
+59.99.9998;-----------------
+59.99.9999;LABA USAHA
+6 .  .;PEND. & BIAYA DILUAR USAHA
+60.01.;PENDAPATAN DILUAR USAHA
+60.01.0101;Pendapatan Jasa Giro
+60.01.0201;Bunga Bank
+60.01.0301;L/R Penjualan Aktiva Tetap
+60.01.9901;Pendapatan Lain2
+60.01.9998;-----------------
+60.01.9999;JUMLAH PENDAPATAN DILUAR USAHA
+60.02.;BIAYA DILUAR USAHA
+60.02.0101;Biaya Bunga
+60.02.0201;Kerugian Piutang
+60.02.9901;Biaya Diluar Usaha Lain2
+60.02.9998;-----------------
+60.02.9999;JUMLAH BIAYA DILUAR USAHA
+69.88.9998;-----------------
+69.88.9999;LABA DILUAR USAHA
+69.99.9998;-----------------
+69.99.9999;LABA RUGI SEBELUM PAJAK
+99.99.9999;=================
+11.01.1202;Kas Kecil (Mjn)
+11.01.1302;Kas Setoran Harian (Mjn)
+11.02.2101;Bank BRI
+11.03.3102;Piutang Belum Masuk (Mjn)
+11.03.3202;Piutang Kurang Setor (Mjn)
+11.03.3302;Piutang Belum Setor (Mjn)
+11.03.3402;Piutang Pengemudi Tidak Aktif
+11.04.4102;Piutang Pengemudi (Mjn)
+11.04.4202;Piutang Karyawan (Mjn)
+11.04.4402;Piutang WAN (Mjn)
+11.04.9902;Piutang Lain-Lain (Mjn)
+11.05.5102;Persediaan Spare Part (Mjn)
+11.05.5202;Persediaan Ban (Mjn)
+11.05.5302;Persediaan Olie (Mjn)
+11.05.5402;Persediaan Accu (Mjn)
+11.05.9902;Persediaan Lain-Lain (Mjn)
+11.06.6102;Uang Muka Pembelian (Mjn)
+11.06.6202;Uang Muka Pajak (Mjn)
+11.07.0102;Biaya Dibayar Dimuka (Mjn)
+13.01.0102;TANAH (Mjn)
+13.01.0202;GEDUNG & BANGUNAN (Mjn)
+13.01.0302;MOBIL TAXI (Mjn)
+13.01.0402;KENDARAAN INVENTARIS KANTOR (M
+13.01.0502;MEUBEL&PERALATAN KANTOR (Mjn)
+13.01.0602;MESIN&PERALATAN BENGKEL (Mjn)
+14.01.0102;AKM.PENY. TANAH (Mjn)
+14.01.0202;AKM.PENY. GEDUNG&BANGUNAN (Mjn
+14.01.0302;AKM.PENYUSUTAN MOBIL TAXI (Mjn
+14.01.0402;AKM.PENY.KENDARAAN INV.KANTOR
+14.01.0502;AKM.MEUBEL&PERALATAN KANTOR (M
+14.01.0602;AKM.PENY.MESIN&PERALATAN BKL (
+21.01.1102;Hutang Usaha (Mjn)
+21.02.2402;Hutang Bank BRI (Mjn)
+21.02.2502;Hutang Leasing Orix (Mjn)
+21.02.2602;Dipo Finance (Mjn)
+21.02.2802;Andalan Finance (Mjn)
+21.03.3102;Titipan Pengemudi (Mjn)
+21.03.3202;Hutang Jaminan Pengemudi (Mjn)
+21.04.4102;Biaya Yg Masih hrs dibayar (Mj
+21.04.4302;Hutang Gaji (Mjn)
+21.05.6102;Pendapatan Diterima Dimuka (Mj
+28.01.1102;Modal Tutuk Kurniawan (Mjn)
+28.01.1202;Modal David Herman Jaya (Mjn)
+29.01.0102;LABA RUGI DITAHAN (Mjn)
+29.02.0102;LABA RUGI TAHUN BERJALAN (Mjn)
+29.03.0102;LABA RUGI BULAN BERJALAN (Mjn)
+40.01.0102;PENDAPATAN ARMADA JALAN (Mjn)
+40.01.0202;PENDAPATAN OVER TIME (Mjn)
+40.02.0102;POTONGAN SETORAN ARMADA JALAN
+40.02.0202;POTONGAN SETORAN KS/BS (Mjn)
+50.01.0102;BIAYA BBM KEPERLUAN BENGKEL (M
+50.01.0202;BIAYA TOL, PARKIR, MEL (Mjn)
+50.01.0302;BIAYA PERAWATAN TAXI DILUAR (M
+50.01.0402;BIAYA SPAREPART (Mjn)
+50.01.0502;BIAYA OLI/PELUMAS (Mjn)
+50.01.0602;BIAYA BAN (Mjn)
+50.01.0702;BIAYA ACCU (Mjn)
+50.01.0802;BIAYA PERLENGKAPAN BENGKEL (Mj
+50.01.0902;BIAYA PEMELIHARAAN/PERB.KEND (
+50.01.1002;BIAYA KENTENG CAT (Mjn)
+50.01.1102;BIAYA PIHAK KE TIGA (perwt tx)
+50.01.1202;BIAYA KECELAKAAN (Mjn)
+50.01.1302;BIAYA PERLENGKAPAN ARMADA (Mjn
+50.01.1402;BIAYA KEBERSIHAN ARMADA (Mjn)
+50.01.1502;BIAYA PERBAIKAN ARGO, RADIO (Mjn)
+50.01.9902;BIAYA OPERASIONAL LAIN2 (Mjn)
+50.02.0102;Bi.Gaji Karyawan (Mjn)
+50.02.0202;Bi.Lembur Karyawan (Mjn)
+50.02.0302;Bi.Makan & Minum (Mjn)
+50.02.0402;Bi.Pengobatan (Mjn)
+50.02.0502;THR (Mjn)
+50.02.0602;Bi.Adm Kredit (Mjn)
+50.02.0702;Bi.Arortisasi STNK (Mjn)
+50.02.0802;PPH 25
+50.02.1002;Insentif Karyawan (Mjn)
+50.02.1102;Bi.Sewa Garasi (Mjn)
+50.02.1202;Bi.Sewa Kendaraan (Mjn)
+50.02.1302;Bi.Alat Tulis (Mjn)
+50.02.1402;Bi.Telekomunikasi & Internet (
+50.02.1502;Bi.Perjalanan Dinas (Mjn)
+50.02.1602;Bi.Entertainment (Mjn)
+50.02.1702;Bi.Perawatan Inventaris (Mjn)
+50.02.1802;Bi.Listrin & Air (Mjn)
+50.02.1902;Bi.BBM & Tol (Mjn)
+50.02.2002;Bi.Sumbangan (Mjn)
+50.02.2102;Bi.Pemeliharaan Bangunan (Mjn)
+50.02.2202;Bi.Pajak (Mjn)
+50.02.2302;Bi.Adm.Bank (Mjn)
+50.02.2402;Bi.Recruitment (Mjn)
+50.02.2502;Bi.Rumah Tangga (Mjn)
+50.02.2602;Bi.Prog.Komputer (Mjn)
+50.02.2702;Bi.Penyusutan Mobil Taxi (Mjn)
+50.02.2802;Bi.Peny.Kendaraan Inventaris (
+50.02.2902;Bi.Peny.Meubel&Peralatan Ktr (
+50.02.3002;Bi.Peny.Mesin&Peralatan Bengkl
+50.02.3102;Bi.STNK (Mjn)
+50.02.3202;Bi.Denda/Tilang (Mjn)
+50.02.3302;Bi.Bonus Taxi (Mjn)
+50.02.3402;Bi.Organda (Mjn)
+50.02.3502;Bi.KPS, TERRA (Mjn)
+50.02.3602;Bi.Radio/Argo (Mjn)
+50.02.3702;Bi.Kecelakaan Taxi (Mjn)
+50.02.3802;Bi.Asuransi Taxi (Mjn)
+50.02.3902;Bi.Ijin Operasi Taxi (Mjn)
+50.02.4002;Bi.BBM Taxi (Mjn)
+50.02.4102;Bi.Promosi (Mjn)
+50.02.4202;Bi.Ats.Operasional (Mjn)
+50.02.4302;Bi.Seragam (Mjn)
+50.02.4402;Bi.Cuci Mobil, Pengharum, Tissue
+50.02.4502;Bi.Provisi & Adm (Mjn)
+50.02.4602;Bi.Notaris (Mjn)
+50.02.4702;Bi.Voucher Taxi (Mjn)
+50.02.4802;Bi.Restitusi (Mjn)
+50.02.4902;Bi.Perbaikan Instalasi (Mjn)
+50.02.5002;THR Driver, Pgyb, Pgkln (Mjn)
+50.02.5102;Bi.Keur (Mjn)
+50.02.9902;Bi.Lain-lain Admistrasi&Umum (
+60.01.0102;Pendapatan Jasa Giro (Mjn)
+60.01.0202;Bunga Bank (Mjn)
+60.01.0302;L/R Penjualan Aktiva Tetap (Mjn)
+60.01.9902;Pendapatan Lain2 (Mjn)
+60.02.0102;Biaya Bunga (Mjn)
+60.02.0202;Kerugian Piutang (Mjn)
+60.02.9902;Biaya Diluar Usaha Lain2 (Mjn)
+60.01.0401;Pendapatan Dana Laka
+60.01.0402;Pendapatan Dana Laka (Mjn)
+21.03.0101;Hutang Lain2
+11.01.1102;Kas Besar (Mjn)
+21.88.8889;
+21.88.8890;
+21.88.8891;
+21.88.8892;
+21.88.8893;
+';
+        $y = str_replace(chr(10), '*', $x);
+        $e = explode('*', $y);
+        $a = array();
+        
+        foreach ($e as $k => $v)
+        {
+            $f = explode(';', $v);
+            array_push($a, array(
+               'F_AccountCode' => $f[0],
+                'F_AccountName' => $f[1],
+                'F_AccountLastUpdate' => date('Y-m-d H:i:s')
+            ));
+        }
+        $this->db->insert_batch('f_account', $a);
+    }
+}
+?>
